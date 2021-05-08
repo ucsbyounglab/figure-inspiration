@@ -1,7 +1,7 @@
 UCSB Young Lab R Graph Gallery
 ===============================
 
-Browse through figures made by members of the [Young Lab](https://young-lab.eemb.ucsb.edu/) at UC Santa Barbara. Click on a figure to navigate to the source code. To contribute figures/code, read the [contribution directions](https://github.com/PJordano-Lab/R-figures/blob/master/contributing.md).
+Browse through figures made by members of the [Young Lab](https://young-lab.eemb.ucsb.edu/) at UC Santa Barbara. Click on a figure to navigate to the source code. To contribute figures/code, read the [contribution directions](https://github.com/ucsbyounglab/figure-inspiration/blob/master/contributing.md).
 
 - [General](#general)
 - [Multipanel plots](#multipanel-plots)
