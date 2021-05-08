@@ -1,0 +1,136 @@
+---
+title: "Sankey diagram"
+author: "Pedro Jordano"
+date: "febrero 19, 2015"
+output: html_document
+---
+
+
+[**Jordano's lab R Figures Catalog**](https://github.com/PJordano-Lab/R-figures)
+
+```{r setup, include=FALSE}
+# Do not remove this chunk #
+library(knitr)
+opts_chunk$set(fig.path = gsub("\\.Rmd", "", paste0("../figures/", current_input(), "-")),
+               fig.align='center')
+
+```
+
+
+
+### Code for plotting a Sankey diagram.
+
+[Sankey diagrams](http://bost.ocks.org/mike/sankey/) illustrate fluxes. They are useful to depict losses of, say, seeds and seedlings during the recruitment cycle of plants. A useful package for Sakey diagrams in `R` is `riverplot`.
+
+Below is the code for the `SankeyR` function. You can source the code directly with:
+
+```{r sourcing, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+require(downloader)
+
+# Sourcing the effectiveness function code from GitHub.   
+link = "https://gist.github.com/pedroj/7e086d4478bac58cb9c9/raw/646eeb2540654ccdb4178776adc259b0a41c3b8b/mySankey.R"
+file = "mySankey.R"
+if(!file.exists(file)) download(link, file, mode = "wb")
+source(file)
+
+```
+
+This is a description of the function, with raw code [available here](https://gist.github.com/pedroj/7e086d4478bac58cb9c9/raw/646eeb2540654ccdb4178776adc259b0a41c3b8b/mySankey.R):
+
+```{r sankey_function, echo=T, eval=FALSE}
+function(inputs, losses, unit, labels, format="plot"){
+#---------------------------------------------------------------------------
+# SankeyR version 1.01 (updated August 10, 2010)
+# With slight modifications, Pedro Jordano 16Feb2015.
+# This is a function for creating Sankey Diagrams in R.
+# See http://www.sankey-diagrams.com for excellent examples of 
+# Sankey Diagrams.
+# This is based on a Gist by https://gist.github.com/aaronberdanier
+# 
+# OPTIONS:
+# 'inputs' is a vector of input values
+# 'losses' is a vector of loss values
+# 'unit' is a string of the unit
+# 'labels' is a vector of the labels for inputs and losses
+# 'format' is the type of plotting:
+#   The default is "plot," which produces a plot in the R graphics device.
+#   Current alternate options include "pdf" and "bmp," which produce
+#   those file types under the name "Sankey.xxx" in the current directory.
+#
+# Inputs do not need to equal losses.  Any difference will be displayed
+# as a discrepancy in the height of the left and right sides of the diagram.
+# This capability enables the developer to examine imbalances in flows.
+# Percentages are a proportion of the inputs (so, the outputs might not 
+# equal 100%).
+#
+# EXAMPLE:
+# Try using these values for the global carbon cycle, 
+# from Schlesinger (1997):
+# inputs = c(120,92)
+# losses = c(45,75,90,1,6)
+# unit = "GtC/yr"
+# labels = c("GPP","Ocean assimilation","Ra","Rh","Ocean loss","LULCC",
+#            "Fossil fuel emissions")
+# SankeyR(inputs,losses,unit,labels)
+#
+# UPDATES:
+# 8/10/10 - Added drawing for only one input.
+#
+# CREDITS:
+# Created for R by Aaron BERDANIER
+# send questions or comments to
+# aaron.berdanier@gmail.com
+#
+# SankeyR is based strongly on drawSankey for Matlab,
+# from James SPELLING, KTH-EGI-EKV (spelling@kth.se)
+# http://leniwiki.epfl.ch/index.php/DrawSankey
+#
+# Distributed under Creative Commons Attribution Non-Commercial.
+# Licensees may copy, distribute, display, and perform the work and make
+# derivative works based on it only for noncommercial purposes.
+#
+# Aaron would appreciate notification if you modify or improve 
+# this function.
+#---------------------------------------------------------------------------
+    
+```
+
+
+### Example
+
+```{r plot, message=FALSE, warning=FALSE, fig.height= 6,fig.width=8}
+require(downloader)
+#
+# PJ example. Based on a dataset of Prunus mahaleb frugivores.
+# A Sankey diagram for demographic transitions.
+# This is my edited, slightly modified, code for the SankeyR function.
+downloader::source_url("https://gist.github.com/pedroj/7e086d4478bac58cb9c9/raw/646eeb2540654ccdb4178776adc259b0a41c3b8b/mySankey.R")
+
+# My trivial example (there is another example inside Sankey.R):
+inputs = c(56, 144)
+losses = c(16,37,39,32, 7, 35, 34)
+unit = "n ="
+
+labels = c("Seeds dispersed \nTurdus viscivorus\n",
+    "Seeds dispersed \nPhoenicurus ochruros\n",
+    "Ungerminated",
+    "Preyed upon: Rodents",
+    "Preyed upon: Insects",
+    "Fungi attack",
+    "Consumed herbivores",
+    "Dessicated",
+    "Seedlings \nrecruited, 2nd year")
+
+SankeyR(inputs,losses,unit,labels)
+
+# Clean up my mess
+rm("inputs", "labels", "losses", "SankeyR", "unit")
+
+```
+
+----------------------------------
+```{r}
+sessionInfo()
+```
+
+----------------------------------
