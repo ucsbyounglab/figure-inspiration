@@ -4,23 +4,25 @@
 
 2. Create the plot in a new Rmd using `template.Rmd`.
     - Open `template.Rmd` and save in the appropriate folder (e.g. "general", "spatial") with an informative name (e.g. `facetted_boxplots.Rmd`).
-    - Update the YAML header (title and author).
-    - Load or create data
-    - Add any notes, citations
+    - If necessary, save your dataset(s) in the same folder with the same title as the Rmd, appended by "data" (e.g. `facetted_boxplots_data.csv`).
+    - Update the YAML header (title, author name and email).
+    - Add a description of the figure, with any notes that may be useful (e.g. links to associated resources, suggested statistics, citation for the published version).
+    - Copy your figure code into the Rmd, make sure everything works, and annotate the code.
 
 3. Knit your new Rmd.
-    - This will generate an HTML output file and a figure in the `figures` folder.
+    - This will generate an HTML document as well as a figure in the `figures` folder.
 
-4. Open `README.Rmd` to include your figure in the appropriate section (e.g. Spatial, Networks, etc).
-    - Insert a chunk wherever you want the figure to appear, like in this example:
+4. Reference your figure in the README.
+    - Open `README.Rmd`.
+    - Copy this code chunk into the appropriate section and update to match your Rmd's title and file path.
 
 ```{r}     
-insert("My figure", "Networks/bipartite_network.Rmd")     
+insert("Cool Boxplots", "general/facetted_boxplots.Rmd")     
 ```
-
-where "My figure" is the title, and the second argument is the path to your Rmd source document. 
     
 5. Knit `README.Rmd`.
-    - This will update the readme displayed on GitHub (`README.md`).
+    - This will update the README displayed on GitHub (`README.md`).
     
-6. Commit everything (the `Rmd`, `html` and `png` files, plus `README.Rmd` and `README.md`) and push to the GitHub repository.
+6. Save your Rmd and README.Rmd. Commit everything and push to the GitHub repository.
+
+*Need to troubleshoot, install, or just figure out how to to use Git with R? Check out [Happy Git and GitHub for the useR.](https://happygitwithr.com)*
