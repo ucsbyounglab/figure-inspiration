@@ -19,7 +19,7 @@ insert <- function(title, path2rmd, fig.width = 400, plot.number = 1){
     fig <- gsub("\\.Rmd", "", path[2])
     cat('#### ', title, '\n\n',
         '[<img src="figures/', fig, '-plot-', plot.number, '.png" width="', fig.width, '">]',
-        '(http://htmlpreview.github.io/?https://raw.github.com/ucsbyounglab/figure-inspiration/blob/master/',
+        '(http://htmlpreview.github.io/?https://github.com/ucsbyounglab/figure-inspiration/blob/master/',
         folder, '/', fig, '.html)',
         sep = "")
   }
@@ -31,8 +31,8 @@ insert <- function(title, path2rmd, fig.width = 400, plot.number = 1){
 Browse through figures made by members of the [Young Lab](https://young-lab.eemb.ucsb.edu/) at UC Santa Barbara. Click on a figure to navigate to the source code. To contribute figures/code, read the [contribution directions](https://github.com/ucsbyounglab/figure-inspiration/blob/master/contributing.md).
 
 - [General](#general)
-- [Models](#models)
-- [Maps](#maps)
+
+---
 
 ## General
 
@@ -40,9 +40,7 @@ Browse through figures made by members of the [Young Lab](https://young-lab.eemb
 insert("Sankey diagram for demographic transitions", "general/sankey.Rmd")
 ```
 
-## Models
-
-## Maps
+---
 
 ### *Additional resources*
 
@@ -55,4 +53,6 @@ insert("Sankey diagram for demographic transitions", "general/sankey.Rmd")
 
 ### *License*
 
-*Repository structure modified from [PJordano-Lab/R-figures](https://github.com/PJordano-Lab/R-figures).
+*Repository [open source license.](https://github.com/ucsbyounglab/figure-inspiration/blob/master/LICENSE)*
+
+*Repository structure modified from [PJordano-Lab/R-figures](https://github.com/PJordano-Lab/R-figures).*

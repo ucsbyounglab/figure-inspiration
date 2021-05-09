@@ -8,28 +8,16 @@ the [contribution
 directions](https://github.com/ucsbyounglab/figure-inspiration/blob/master/contributing.md).
 
   - [General](#general)
-  - [Models](#models)
-  - [Maps](#maps)
 
----
+-----
 
 ## General
 
 #### Sankey diagram for demographic transitions
 
-[<img src="figures/sankey-plot-1.png" width="400">](http://htmlpreview.github.io/?https://raw.github.com/ucsbyounglab/figure-inspiration/blob/master/general/sankey.html)
+[<img src="figures/sankey-plot-1.png" width="400">](http://htmlpreview.github.io/?https://github.com/ucsbyounglab/figure-inspiration/blob/master/general/sankey.html)
 
-
-
-## Models
-
-
-
-## Maps
-
-
-
----
+-----
 
 ### *Additional resources*
 
@@ -43,7 +31,8 @@ directions](https://github.com/ucsbyounglab/figure-inspiration/blob/master/contr
 
 ### *License*
 
-*Repository [open source license.](https://github.com/ucsbyounglab/figure-inspiration/blob/master/LICENSE)*
+*Repository [open source
+license.](https://github.com/ucsbyounglab/figure-inspiration/blob/master/LICENSE)*
 
 *Repository structure modified from
 [PJordano-Lab/R-figures](https://github.com/PJordano-Lab/R-figures).*
