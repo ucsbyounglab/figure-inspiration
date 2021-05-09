@@ -15,7 +15,7 @@ directions](https://github.com/ucsbyounglab/figure-inspiration/blob/master/contr
 
 #### Sankey diagram for demographic transitions
 
-[<img src="figures/sankey-plot-1.png" width="400">](http://htmlpreview.github.io/?https://raw.github.com/PJordano-Lab/R-figures/blob/master/general/sankey.html)
+[<img src="figures/sankey-plot-1.png" width="400">](http://htmlpreview.github.io/?https://raw.github.com/ucsbyounglab/figure-inspiration/blob/master/general/sankey.html)
 
 ## Models
 

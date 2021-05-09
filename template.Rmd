@@ -21,7 +21,7 @@ opts_chunk$set(fig.path = gsub("\\.Rmd", "", paste0("../figures/", current_input
 
 - Figure description
 - Type of data used for figure
-- Description of associated analyses
+- Description of suggested analyses
 - If published, citation/link to publication
 - Links to relevant resources
 
@@ -33,12 +33,14 @@ opts_chunk$set(fig.path = gsub("\\.Rmd", "", paste0("../figures/", current_input
 
 # Load or create dataset
 
-# For example:
-# read.csv("dataset.csv")
+# dat <- read.csv("coolgraph_data.csv")
 # OR
-# dataset <- rnorm(100, 10, 3)
+# dat <- rnorm(100, 10, 3)
 
-# Include dataset if possible to make the example reproducible
+# Show data summary
+
+# str(dat)
+# head(dat)
 
 ```
 
@@ -48,10 +50,9 @@ opts_chunk$set(fig.path = gsub("\\.Rmd", "", paste0("../figures/", current_input
 
 ```{r plot}
 
-# Chunk name must be 'plot' - do not change (please)
+# Chunk name must be 'plot' - do not change
 
-# For example:
-# plot(dataset)
+# plot(dat)
 
 ```
 
