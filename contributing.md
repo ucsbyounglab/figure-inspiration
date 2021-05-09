@@ -14,10 +14,10 @@
 
 4. Reference your figure in the README.
     - Open `README.Rmd`.
-    - Copy this code chunk into the appropriate section and update to match your Rmd's title and file path.
+    - Copy this code chunk into the appropriate section and update to match your figure's title and your Rmd's file path.
 
 ```{r}     
-insert("Cool Boxplots", "general/facetted_boxplots.Rmd")     
+insert("Cool Boxplots", "general/facetted_boxplots.Rmd")    
 ```
     
 5. Knit `README.Rmd`.

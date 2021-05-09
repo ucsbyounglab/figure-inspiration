@@ -31,11 +31,7 @@ opts_chunk$set(fig.path = gsub("\\.Rmd", "", paste0("../figures/", current_input
 
 ```{r data}
 
-# Load or create dataset
-
-# dat <- read.csv("coolgraph_data.csv")
-# OR
-# dat <- rnorm(100, 10, 3)
+# Load or create dummy dataset
 
 # Show data summary
 
@@ -50,9 +46,9 @@ opts_chunk$set(fig.path = gsub("\\.Rmd", "", paste0("../figures/", current_input
 
 ```{r plot}
 
-# Chunk name must be 'plot' - do not change
-
-# plot(dat)
+# Do not change the name of this code chunk from "plot"!
+# If your code is split into multiple code chunks (e.g. for data wrangling), make sure that the code that actually produces the plot is included in THIS code chunk.
+# This code chunk will automatically create image(s) in the "figures" folder to display in the README.
 
 ```
 
