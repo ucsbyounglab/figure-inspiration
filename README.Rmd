@@ -1,44 +1,15 @@
 ---
-Title: "A repository of R graphics with their associated code"
-Author: "Integrative Ecology Group"
+Title: "R Graph Gallery"
+Author: "UCSB Young Lab"
 output:
-  md_document:
-    variant: markdown_github
+  github_document
     toc: yes
-    toc_depth: 5
 ---
-
-# A repository of R graphics with their associated code
-
-This repository intends to be a catalog of figures made in [our group](http://ebd10.ebd.csic.es/ebd10/Home.html) with the associated R code used to produce them. Scroll down to browse the available figures. Clicking on any of them will take you to the source code used to produce it. 
-
-**CONTRIBUTING**
-
-See [here](https://github.com/PJordano-Lab/R-figures/blob/master/contributing.md) for information on how to contribute new figures and code. 
-
-
-**OTHER REPOS WITH R CODE TO PRODUCE FIGURES**
-
-- [R graph catalog](http://shiny.stat.ubc.ca/r-graph-catalog/)
-
-- [The R graph gallery](http://www.r-graph-gallery.com/)
-
-- [R graph gallery](http://rgraphgallery.blogspot.com/)
-
-- [Cookbook for R: Graphs](http://www.cookbook-r.com/Graphs/)
-
-- [A compendium of clean graphs in R](http://shinyapps.org/apps/RGraphCompendium/index.php)
-
-- [Graphical data analysis with R](http://www.gradaanwr.net/)
-
-  
-
 
 ```{r knitr_setup, include=FALSE, cache=FALSE}
 library(knitr)
 opts_chunk$set(echo = FALSE, comment = NA, results = 'asis')
 ```
-
 
 ```{r insert_function}
 insert <- function(title, path2rmd, fig.width = 400, plot.number = 1){
@@ -57,109 +28,33 @@ insert <- function(title, path2rmd, fig.width = 400, plot.number = 1){
 }
 ```
 
+# UCSB Young Lab R Graph Gallery
 
+Browse through figures made by members of the [Young Lab](https://young-lab.eemb.ucsb.edu/) at UC Santa Barbara. Click on a figure to navigate to the source code. To contribute figures/code, read the [contribution directions](https://github.com/ucsbyounglab/figure-inspiration/blob/master/contributing.md).
 
+- [General](#general)
+- [Models](#models)
+- [Maps](#maps)
 
-# FIGURE THEMES
-
-
-## General stats
-
+## General
 
 ```{r}
 insert("Sankey diagram for demographic transitions", "General/sankey.Rmd")
 ```
 
+## Models
 
-```{r}
-insert("Survival curves (ggplot)", "General/survival_ggplot.Rmd")
-```
+## Maps
 
+### *Additional resources*
 
+- [R graph catalog](http://shiny.stat.ubc.ca/r-graph-catalog/)
+- [The R graph gallery](http://www.r-graph-gallery.com/)
+- [R graph gallery](http://rgraphgallery.blogspot.com/)
+- [Cookbook for R: Graphs](http://www.cookbook-r.com/Graphs/)
+- [A compendium of clean graphs in R](http://shinyapps.org/apps/RGraphCompendium/index.php)
+- [Graphical data analysis with R](http://www.gradaanwr.net/)
 
+### *License*
 
-## Multipanel plots 
-
-
-```{r}
-insert("ggplot slopegraph multipanel", "Multipanel/slopegraph_multipanel.Rmd")
-```
-
-
-
-
-
-
-
-## Multivariate
-
-
-
-
-
-
-
-## Time series
-
-
-
-
-
-
-
-## Spatial / Maps
-
-
-
-```{r}
-insert("Topographic map", "Spatial/topomap.Rmd")
-```
-
-
-```{r}
-insert("Plotting dispersal kernels", "Spatial/dispkernels.Rmd")
-```
-
-
-```{r}
-insert("Plotting expected vs empirical distances", "Spatial/ExpectedvsEmpirical_kernels.Rmd")
-```
-
-
-
-
-## Networks
-
-
-
-```{r}
-insert("Plotting effectiveness landscapes", "Networks/effectiveness.Rmd")
-```
-
-More information on effectiveness landscapes is in [Pedro Jordano Lab Pages @GitHub](http://pedroj.github.io).
-
-
-
-```{r}
-insert("Assignments network", "Networks/assig_network.Rmd")
-```
-
-
-```{r}
-insert("Gene flow", "Networks/GeneFlow.Rmd")
-```
-
-
-
-
-
-
-
-Licence
---------
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
-
-Creative Commons License  
-
-This work and all other materials under https://github.com/PJordano-Lab/ are licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/legalcode).
-
+*Repository structure modified from [PJordano-Lab/R-figures](https://github.com/PJordano-Lab/R-figures).
