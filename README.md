@@ -43,5 +43,7 @@ directions](https://github.com/ucsbyounglab/figure-inspiration/blob/master/contr
 
 ### *License*
 
-\*Repository structure modified from
-[PJordano-Lab/R-figures](https://github.com/PJordano-Lab/R-figures).
+*Repository [open source license.](https://github.com/ucsbyounglab/figure-inspiration/blob/master/LICENSE)*
+
+*Repository structure modified from
+[PJordano-Lab/R-figures](https://github.com/PJordano-Lab/R-figures).*
