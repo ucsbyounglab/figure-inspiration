@@ -1,0 +1,65 @@
+---
+title: "INFORMATIVE PLOT TITLE"
+subtitle: "From [UCSB Young Lab R Graph Gallery](https://github.com/ucsbyounglab/figure-inspiration)"
+author: "YOUR NAME, YOUR EMAIL"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  html_document:
+    theme: flatly
+---
+
+```{r setup, include=FALSE}
+# Do not edit/remove
+library(knitr)
+opts_chunk$set(fig.path = gsub("\\.Rmd", "", paste0("../figures/", current_input(), "-")),
+               fig.align='center')
+```
+
+<br>
+
+### Figure information
+
+- Figure description
+- Type of data used for figure
+- Description of associated analyses
+- If published, citation/link to publication
+- Links to relevant resources
+
+<br>
+
+### Dataset
+
+```{r data}
+
+# Load or create dataset
+
+# For example:
+# read.csv("dataset.csv")
+# OR
+# dataset <- rnorm(100, 10, 3)
+
+# Include dataset if possible to make the example reproducible
+
+```
+
+<br>
+
+### Figure code
+
+```{r plot}
+
+# Chunk name must be 'plot' - do not change (please)
+
+# For example:
+# plot(dataset)
+
+```
+
+<br>
+
+### *Session info*
+
+```{r sessionInfo, echo=FALSE}
+# Do not edit/remove
+sessionInfo()
+```
