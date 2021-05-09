@@ -1,9 +1,7 @@
 ---
 Title: "R Graph Gallery"
 Author: "UCSB Young Lab"
-output:
-  github_document
-    toc: yes
+output: github_document
 ---
 
 ```{r knitr_setup, include=FALSE, cache=FALSE}
@@ -39,7 +37,7 @@ Browse through figures made by members of the [Young Lab](https://young-lab.eemb
 ## General
 
 ```{r}
-insert("Sankey diagram for demographic transitions", "General/sankey.Rmd")
+insert("Sankey diagram for demographic transitions", "general/sankey.Rmd")
 ```
 
 ## Models
