@@ -1,0 +1,164 @@
+---
+title: "Habitat preference (Proportional abundance by habitat type)"
+subtitle: "From [UCSB Young Lab R Graph Gallery](https://github.com/ucsbyounglab/figure-inspiration)"
+author: "Kate Culhane, kathrynculhane@ucsb.edu"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  html_document:
+    theme: flatly
+    highlight: tango
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = '..')
+knitr::opts_chunk$set(fig.align='center', collapse=TRUE)
+```
+
+---
+
+### Figure information
+
+- Caption: Small mammal habitat preference across fire severity categories. Bar plot showing the percentage of unique individuals trapped in each of the three fire severity categories for each of the 11 species captured, with number of total captures denoted by n. 
+- Pairs well with NMDS ordination
+- Published in Culhane et al. 2021 (in prep)
+- Inspired by [Young et al. 2015](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/14-0995.1) - Fig. 2b
+
+---
+
+### Figure code
+<br>
+
+#### **Packages**
+
+- `tidyverse`
+
+```{r}
+
+# Load packages
+library(tidyverse)
+
+```
+
+#### **Data**
+
+- Small mammal capture data (one row per unique individual)
+- Relevant columns
+  - `severity`: treatment(fire severity: unburned, low/moderate, high)
+  - `species`: small mammal species code
+  - `common_name`: small mammal species common name
+
+```{r}
+
+# Load data
+smamms <- read_csv('community_analysis/habitat_preference_data.csv') %>% 
+  mutate(severity = factor(severity, levels = c('unb', 'mod', 'high')))
+
+# Data structure
+str(smamms)
+head(smamms)
+
+```
+
+#### **Data wrangling**
+
+- Create summary data table for samples size (n)
+- Calculate proportional abundance per treatment, for each species
+- Reorder factor levels by proportion
+
+```{r}
+
+# Summary table of overall mammal abundances
+summary <- smamms %>% 
+  group_by(species) %>% 
+  summarize(n = length(species)) %>% 
+  ungroup() %>% 
+  arrange(-n)
+
+# Dataframe of proportional abundance per fire severity, for each species
+prop_species <- smamms %>% 
+  group_by(species, common_name, severity) %>% 
+  summarize(n = length(severity)) %>% 
+  mutate(prop = n/sum(n)*100) %>% # proportion of captures at each treatment, per species
+  mutate(label = common_name) %>% 
+  ungroup()
+
+# Dataframe for just low severity
+prop_low <- prop_species %>% 
+  filter(severity == 'unb') %>% 
+  select(species, prop) %>% 
+  rename(prop_low = prop)
+
+# Dataframe for just moderate severity
+prop_mod <- prop_species %>%
+  filter(severity == 'mod') %>% 
+  select(species, prop) %>% 
+  rename(prop_mod = prop)
+
+# Re-ordering data frame occurence within each severity
+prop_species2 <- prop_species %>%
+  full_join(prop_low, by = 'species') %>% 
+  full_join(prop_mod, by = 'species') %>% 
+  mutate(
+    prop_low = case_when(
+      is.na(prop_low) ~ 0,
+      !is.na(prop_low) ~ prop_low
+    ),
+    prop_mod = case_when(
+      is.na(prop_mod) ~ 0,
+      !is.na(prop_mod) ~ prop_mod
+    )
+  ) %>% 
+  ungroup() %>% 
+  mutate(label = as_factor(label),
+         label = fct_reorder(label, prop_mod),
+         label = fct_reorder(label, prop_low),
+         severity = factor(severity, levels = c('high', 'mod', 'unb'))) %>% 
+  full_join(summary, by = 'species')
+
+```
+
+#### **Figure**
+
+```{r, fig.width=4, fig.height=3}
+
+# Column graph of proportional treatment abundances per species
+colors <- c("#D85F2B", "#DCA827", "#2D9875")
+ggplot(prop_species2, aes(x = label, y = prop, fill = severity)) +
+  geom_col() +
+  geom_text(aes(x = label, y = 103,
+                label = paste('n = ', n.y)),
+            size = 3.2, hjust = 0, color = 'grey30') +
+  scale_fill_manual(values = colors,
+                    name = 'Fire severity',
+                    labels = labs) +
+  coord_flip() +
+  scale_y_continuous(limits = c(0, 200),
+                     breaks = c(0, 50, 100),
+                     expand = c(0,0)) +
+  theme_minimal() +
+  labs(x = '', y = '') +
+  theme(axis.text.y = element_text(size = 10, color = 'black'),
+        axis.text.x = element_text(size = 10),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        legend.position = 'none',
+        axis.title.x = element_text(hjust = 3.8, size = 13))
+
+```
+
+```{r include=FALSE}
+# Save plot
+ggsave('figures/habitat_preference_1.png', plot = last_plot(),
+       width = 4, height = 3, units = 'in')
+```
+
+---
+
+### R session info
+
+```{r sessionInfo}
+sessionInfo()
+```
+
+<br>

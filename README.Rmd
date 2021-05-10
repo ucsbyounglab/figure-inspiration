@@ -17,8 +17,8 @@ insert <- function(title, path2rmd, fig.width = 400, plot.number = 1){
     path <- unlist(strsplit(path2rmd, "/"))
     folder <- path[1]
     fig <- gsub("\\.Rmd", "", path[2])
-    cat('#### ', title, '\n\n',
-        '[<img src="figures/', fig, '-plot-', plot.number, '.png" width="', fig.width, '">]',
+    cat('##### ', title, '\n\n',
+        '[<img src="figures/', fig, '_', plot.number, '.png" width="', fig.width, '">]',
         '(https://htmlpreview.github.io/?https://github.com/ucsbyounglab/figure-inspiration/blob/master/',
         folder, '/', fig, '.html)',
         sep = "")
@@ -28,21 +28,37 @@ insert <- function(title, path2rmd, fig.width = 400, plot.number = 1){
 
 # UCSB Young Lab R Graph Gallery
 
-Browse through figures made by members of the [Young Lab](https://young-lab.eemb.ucsb.edu/) at UC Santa Barbara. Click on a figure to navigate to the source code. To contribute figures/code, read the [contribution directions](https://github.com/ucsbyounglab/figure-inspiration/blob/master/contributing.md).
+Browse through some figures made by members of the [Young Lab](https://young-lab.eemb.ucsb.edu/) at UC Santa Barbara! Click on a figure to navigate to the source code. To contribute figures/code, read the [contribution directions](https://github.com/ucsbyounglab/figure-inspiration/blob/master/contributing.md).
 
 - [General](#general)
+- [Community analysis](#community-analysis)
+- [Model output](#model-output)
+- [Spatial](#spatial)
 
 ---
 
-## General
+### General
+
+*Awaiting figures!*
+
+### Community analysis
 
 ```{r}
-insert("Sankey diagram for demographic transitions", "general/sankey.Rmd")
+insert("Habitat preference (Proportional abundance by habitat type)", "community_analysis/habitat_preference.Rmd",
+       fig.width = 400, plot.number = 1)
 ```
+
+### Model output
+
+*Awaiting figures!*
+
+### Spatial
+
+*Awaiting figures!*
 
 ---
 
-### *Additional resources*
+#### *Additional resources*
 
 - [R graph catalog](http://shiny.stat.ubc.ca/r-graph-catalog/)
 - [The R graph gallery](http://www.r-graph-gallery.com/)
@@ -50,9 +66,5 @@ insert("Sankey diagram for demographic transitions", "general/sankey.Rmd")
 - [Cookbook for R: Graphs](http://www.cookbook-r.com/Graphs/)
 - [A compendium of clean graphs in R](http://shinyapps.org/apps/RGraphCompendium/index.php)
 - [Graphical data analysis with R](http://www.gradaanwr.net/)
-
-### *License*
-
-*Repository [open source license.](https://github.com/ucsbyounglab/figure-inspiration/blob/master/LICENSE)*
 
 *Repository structure modified from [PJordano-Lab/R-figures](https://github.com/PJordano-Lab/R-figures).*

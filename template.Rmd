@@ -6,57 +6,98 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   html_document:
     theme: flatly
+    highlight: tango
+    code_folding: hide
 ---
 
 ```{r setup, include=FALSE}
-# Do not edit/remove
-library(knitr)
-opts_chunk$set(fig.path = gsub("\\.Rmd", "", paste0("../figures/", current_input(), "-")),
-               fig.align='center')
+knitr::opts_knit$set(root.dir = '..')
+knitr::opts_chunk$set(fig.align='center', collapse=TRUE, warning=FALSE, message=FALSE)
 ```
 
-<br>
+---
 
 ### Figure information
 
-- Figure description
-- Type of data used for figure
-- Description of suggested analyses
-- If published, citation/link to publication
+- Figure caption/description
+- Suggested analyses
+- Citation/link if published
 - Links to relevant resources
+- Any other useful notes
 
+---
+
+### Figure code
 <br>
 
-### Dataset
+#### **Packages**
+
+- List necessary packages
+
+```{r packages}
+
+### Load packages
+library(tidyverse) # needed for ggsave function
+
+```
+
+#### **Data**
+
+- Brief description of the data
+- Relevant columns
+  - `COLUMN_NAME`: definition
+  - `COLUMN_NAME`: definition
+  - `COLUMN_NAME`: definition
 
 ```{r data}
 
-# Load or create dummy dataset
+### Load data
 
-# Show data summary
-
-# str(dat)
-# head(dat)
-
-```
-
-<br>
-
-### Figure code
-
-```{r plot}
-
-# Do not change the name of this code chunk from "plot"!
-# If your code is split into multiple code chunks (e.g. for data wrangling), make sure that the code that actually produces the plot is included in THIS code chunk.
-# This code chunk will automatically create image(s) in the "figures" folder to display in the README.
+### Data structure
+str()
+head()
 
 ```
 
-<br>
+#### **Data wrangling**
 
-### *Session info*
+- Describe necessary data wrangling (e.g. reordering variables, creating matrices)
 
-```{r sessionInfo, echo=FALSE}
-# Do not edit/remove
+```{r data-wrangling}
+
+### Data wrangling
+
+```
+
+#### **Figure**
+
+```{r figure, fig.width=5, fig.height=3, class.source = 'fold-show'}
+
+### Adjust fig.width and fig.height in the code chunk options to optimize figure sizing
+
+### Create figure
+fig_1 <- 
+
+```
+
+```{r figure-save, include=FALSE}
+
+### Save plot in "figures" folder
+### Replace FILENAME with the name of the Rmd copied exactly (e.g. "facetted_boxplots")
+### If only creating one figure, leave "_1" appended
+### If creating multiple figures, copy the ggsave code for each figure and update with "_2", etc.
+### Update the plotname, width, and height if needed
+ggsave('figures/FILENAME_1.png', plot = fig_1,
+       width = 5, height = 3, units = 'in')
+
+```
+
+---
+
+### R session info
+
+```{r sessionInfo}
 sessionInfo()
 ```
+
+<br>
