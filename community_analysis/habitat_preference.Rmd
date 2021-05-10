@@ -1,7 +1,6 @@
 ---
-title: "Habitat preference (Proportional abundance by habitat type)"
+title: "Habitat preference"
 subtitle: "From [UCSB Young Lab R Graph Gallery](https://github.com/ucsbyounglab/figure-inspiration)"
-author: "Kate Culhane, kathrynculhane@ucsb.edu"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   html_document:
@@ -15,6 +14,10 @@ knitr::opts_knit$set(root.dir = '..')
 knitr::opts_chunk$set(fig.align='center', collapse=TRUE)
 ```
 
+**Kate Culhane**  
+kathrynculhane@ucsb.edu  
+[disturbedsystems.com](https://www.disturbedsystems.com/)
+
 ---
 
 ### Figure information
@@ -27,7 +30,6 @@ knitr::opts_chunk$set(fig.align='center', collapse=TRUE)
 ---
 
 ### Figure code
-<br>
 
 #### **Packages**
 

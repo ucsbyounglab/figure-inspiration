@@ -1,5 +1,5 @@
-
-# UCSB Young Lab R Graph Gallery
+UCSB Young Lab R Graph Gallery
+================
 
 Browse through some figures made by members of the [Young
 Lab](https://young-lab.eemb.ucsb.edu/) at UC Santa Barbara\! Click on a
@@ -18,15 +18,21 @@ directions](https://github.com/ucsbyounglab/figure-inspiration/blob/master/contr
 
 *Awaiting figures\!*
 
+-----
+
 ### Community analysis
 
 ##### Habitat preference (Proportional abundance by habitat type)
 
 [<img src="figures/habitat_preference_1.png" width="400">](https://htmlpreview.github.io/?https://github.com/ucsbyounglab/figure-inspiration/blob/master/community_analysis/habitat_preference.html)
 
+-----
+
 ### Model output
 
 *Awaiting figures\!*
+
+-----
 
 ### Spatial
 

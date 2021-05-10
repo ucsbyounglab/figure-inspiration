@@ -5,7 +5,7 @@
 2. Create the plot in a new Rmd using `template.Rmd`.
     - Open `template.Rmd` and save in the appropriate folder (e.g. "general", "spatial") with an informative name (e.g. `facetted_boxplots.Rmd`).
     - Save any necessary dataset(s) in the same folder with the same title as the Rmd, appended by "data" (e.g. `facetted_boxplots_data.csv`).
-    - Update the YAML header (title, author name and email).
+    - Update the title in the YAML header, and add the author information underneath.
     - Add any useful figure information (e.g. figure caption, suggested statistics, citation for the published version, links to associated resources).
     - Copy your code into the appropriate code chunks (packages, data, data-wrangling, figure) and make sure everything works.
     - Add notes on the data structure, data wrangling, etc. and annotate the code.

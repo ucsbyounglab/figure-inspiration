@@ -1,7 +1,7 @@
 ---
 title: "INFORMATIVE PLOT TITLE"
 subtitle: "From [UCSB Young Lab R Graph Gallery](https://github.com/ucsbyounglab/figure-inspiration)"
-author: "YOUR NAME, YOUR EMAIL"
+author: "YOUR NAME"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
   html_document:
@@ -14,6 +14,11 @@ output:
 knitr::opts_knit$set(root.dir = '..')
 knitr::opts_chunk$set(fig.align='center', collapse=TRUE, warning=FALSE, message=FALSE)
 ```
+
+**AUTHOR NAME**  
+AUTHOR EMAIL  
+AUTHOR WEBSITE  
+(include two spaces after each line if you want the info to appear on separate lines!)
 
 ---
 
